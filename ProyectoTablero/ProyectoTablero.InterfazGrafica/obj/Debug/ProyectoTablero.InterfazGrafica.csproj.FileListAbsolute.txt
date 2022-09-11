@@ -1,0 +1,11 @@
+D:\Documents\GitHub\CAI_-01-11092022-EjercicioTablero\ProyectoTablero\ProyectoTablero.InterfazGrafica\bin\Debug\ProyectoTablero.InterfazGrafica.exe.config
+D:\Documents\GitHub\CAI_-01-11092022-EjercicioTablero\ProyectoTablero\ProyectoTablero.InterfazGrafica\bin\Debug\ProyectoTablero.InterfazGrafica.exe
+D:\Documents\GitHub\CAI_-01-11092022-EjercicioTablero\ProyectoTablero\ProyectoTablero.InterfazGrafica\bin\Debug\ProyectoTablero.InterfazGrafica.pdb
+D:\Documents\GitHub\CAI_-01-11092022-EjercicioTablero\ProyectoTablero\ProyectoTablero.InterfazGrafica\bin\Debug\ProyectoTablero.Dominio.dll
+D:\Documents\GitHub\CAI_-01-11092022-EjercicioTablero\ProyectoTablero\ProyectoTablero.InterfazGrafica\bin\Debug\ProyectoTablero.Dominio.pdb
+D:\Documents\GitHub\CAI_-01-11092022-EjercicioTablero\ProyectoTablero\ProyectoTablero.InterfazGrafica\obj\Debug\ProyectoTablero.InterfazGrafica.csproj.AssemblyReference.cache
+D:\Documents\GitHub\CAI_-01-11092022-EjercicioTablero\ProyectoTablero\ProyectoTablero.InterfazGrafica\obj\Debug\ProyectoTablero.InterfazGrafica.csproj.SuggestedBindingRedirects.cache
+D:\Documents\GitHub\CAI_-01-11092022-EjercicioTablero\ProyectoTablero\ProyectoTablero.InterfazGrafica\obj\Debug\ProyectoTablero.InterfazGrafica.csproj.CoreCompileInputs.cache
+D:\Documents\GitHub\CAI_-01-11092022-EjercicioTablero\ProyectoTablero\ProyectoTablero.InterfazGrafica\obj\Debug\ProyectoTablero.InterfazGrafica.csproj.CopyComplete
+D:\Documents\GitHub\CAI_-01-11092022-EjercicioTablero\ProyectoTablero\ProyectoTablero.InterfazGrafica\obj\Debug\ProyectoTablero.InterfazGrafica.exe
+D:\Documents\GitHub\CAI_-01-11092022-EjercicioTablero\ProyectoTablero\ProyectoTablero.InterfazGrafica\obj\Debug\ProyectoTablero.InterfazGrafica.pdb

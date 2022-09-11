@@ -87,31 +87,40 @@ namespace ProyectoTablero.Dominio
         //Función para listar las tareas del tablero
         public List<Tarea> TraerTareas(string estado)
         {
-            foreach(Tarea t in _tareas)
+            //Declaración de lista
+            List<Tarea> _tareasTablero = new List<Tarea>();
+
+            if (string.IsNullOrEmpty(estado))
             {
-                if(string.IsNullOrEmpty(estado))
+                foreach (Tarea t in _tareas)
                 {
+                    _tareasTablero.Add(t);
+
                     Console.WriteLine(t.Codigo + " " + t.Descripcion + " " + t.Estado + " " + t.Orden + " " + t.FechaAlta + " " + t.FechaRealizacion);
                 }
-                else if(t.Estado == "Finalizada")
+            }
+            else
+            {
+                foreach(Tarea t in _tareas)
                 {
-                    Console.WriteLine(t.Codigo + " " + t.Descripcion + " " + t.Estado + " " + t.Orden + " " + t.FechaAlta + " " + t.FechaRealizacion);
-                }
-                else if (t.Estado == "Iniciado")
-                {
-                    Console.WriteLine(t.Codigo + " " + t.Descripcion + " " + t.Estado + " " + t.Orden + " " + t.FechaAlta + " " + t.FechaRealizacion);
-                }
-                else if (t.Estado == "En proceso")
-                {
-                    Console.WriteLine(t.Codigo + " " + t.Descripcion + " " + t.Estado + " " + t.Orden + " " + t.FechaAlta + " " + t.FechaRealizacion);
-                }
-                else
-                {
-                    throw new EstadoTareaInvalidoException(estado);
+                    if (t.Estado == estado)
+                    {
+                        _tareasTablero.Add(t);
+
+                        Console.WriteLine(
+                            "Las tareas con estado " + estado + " son las siguientes: " +
+                            t.Codigo + " " + t.Descripcion + " " + t.Estado + " " + t.Orden + " " + t.FechaAlta + " " + t.FechaRealizacion
+                            )
+                            ;
+                    }
+                    else
+                    {
+                        throw new EstadoTareaInvalidoException(estado);
+                    }
                 }
             }
 
-            return _tareas;
+            return _tareasTablero;
         }
     }
 }
