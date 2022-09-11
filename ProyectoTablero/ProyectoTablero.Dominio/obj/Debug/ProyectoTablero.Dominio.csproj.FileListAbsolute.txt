@@ -1,0 +1,2 @@
+D:\Documents\GitHub\CAI_-01-11092022-EjercicioTablero\ProyectoTablero\ProyectoTablero.Dominio\obj\Debug\ProyectoTablero.Dominio.csproj.AssemblyReference.cache
+D:\Documents\GitHub\CAI_-01-11092022-EjercicioTablero\ProyectoTablero\ProyectoTablero.Dominio\obj\Debug\ProyectoTablero.Dominio.csproj.CoreCompileInputs.cache
