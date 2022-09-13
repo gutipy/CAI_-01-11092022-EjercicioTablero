@@ -77,11 +77,10 @@ namespace ProyectoTablero.Dominio
                 {
                     t.Estado = estado;
                 }
-                else
-                {
-                    throw new CodigoTareaNoExisteException(codigo);
-                }
             }
+
+            Console.WriteLine("Cambio satisfactorio! La tarea con codigo " + codigo + " ahora posee el estado " + estado);
+
         }
 
         //Función para listar las tareas del tablero
@@ -108,7 +107,6 @@ namespace ProyectoTablero.Dominio
                         _tareasTablero.Add(t);
 
                         Console.WriteLine(
-                            "Las tareas con estado " + estado + " son las siguientes: " +
                             t.Codigo + " " + t.Descripcion + " " + t.Estado + " " + t.Orden + " " + t.FechaAlta + " " + t.FechaRealizacion
                             )
                             ;

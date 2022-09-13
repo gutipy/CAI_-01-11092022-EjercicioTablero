@@ -46,6 +46,7 @@
     <Compile Include="Exceptions\CodigoTareaNoExisteException.cs" />
     <Compile Include="Exceptions\EstadoTareaInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validaciones\ValidacionesInput.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
