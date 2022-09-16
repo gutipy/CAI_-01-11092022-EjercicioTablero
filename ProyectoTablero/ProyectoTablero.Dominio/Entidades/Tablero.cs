@@ -65,7 +65,16 @@ namespace ProyectoTablero.Dominio
             //Asignación del código de tarea de manera incremental
             tarea.Codigo = _tareas.Count + 1;
 
-            _tareas.Add(tarea);
+            //Regla de negocio para validar que la fecha de alta ingresada no puede ser superior a la fecha de finalización de la tarea
+            if (tarea.FechaAlta > tarea.FechaRealizacion)
+            {
+                throw new FechaAltaMayorAFechaFinException();
+            }
+            else
+            {
+                _tareas.Add(tarea);
+            }
+            
         }
 
         //Método para cambiar el estado de una tarea
@@ -111,10 +120,11 @@ namespace ProyectoTablero.Dominio
                             )
                             ;
                     }
-                    else
-                    {
-                        throw new EstadoTareaInvalidoException(estado);
-                    }
+                }
+
+                if (_tareasTablero.Count == 0)
+                {
+                    throw new EstadoTareaInvalidoException(estado);
                 }
             }
 

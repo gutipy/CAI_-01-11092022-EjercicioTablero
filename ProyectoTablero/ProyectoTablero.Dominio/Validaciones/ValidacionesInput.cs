@@ -47,9 +47,9 @@ namespace ProyectoTablero.Dominio.Validaciones
                     "Finalizada" + Environment.NewLine +
                     "Ingrese el estado:");
 
-                estado = Console.ReadLine().ToLower();
+                estado = Console.ReadLine();
 
-                if (estado == "no iniciada" || estado == "en curso" || estado == "finalizada" || estado == "")
+                if (estado == "No iniciada" || estado == "En curso" || estado == "Finalizada" || estado == "")
                 {
                     flag = true;
                 }
@@ -57,6 +57,7 @@ namespace ProyectoTablero.Dominio.Validaciones
                 {
                     Console.WriteLine("ERROR! El estado " + estado + " no es un estado válido, intente nuevamente.");
                 }
+
             }while(flag == false);
 
             return estado;
@@ -82,6 +83,82 @@ namespace ProyectoTablero.Dominio.Validaciones
                     flag = true;
                 }
             } while (flag == false);
+
+            return flag;
+        }
+
+        public static bool FuncionValidacionCadena(ref string cadena)
+        {
+            //Declaración de variables
+            bool flag = false;
+
+            if (string.IsNullOrEmpty(cadena))
+            {
+                Console.WriteLine("ERROR! El valor ingresado no puede ser vacío, intente nuevamente.");
+            }
+            else
+            {
+                flag = true;
+            }
+
+            return flag;
+        }
+
+        public static bool FuncionValidacionNumero(string numero, ref int numeroValidado)
+        {
+            //Declaración de variables
+            bool flag = false;
+
+            if (!int.TryParse(numero, out numeroValidado))
+            {
+                Console.WriteLine("ERROR! El valor ingresado tiene que ser de tipo numérico, intente nuevamente.");
+            }
+            else if (numeroValidado <= 0)
+            {
+                Console.WriteLine("ERROR! El valor ingresado tiene que ser mayor a cero, intente nuevamente.");
+            }
+            else
+            {
+                flag = true;
+            }
+
+            return flag;
+        }
+
+        public static bool FuncionValidacionFechaAlta(string fecha, ref DateTime fechaValidada)
+        {
+            //Declaración de variables
+            bool flag = false;
+
+            if (!DateTime.TryParse(fecha, out fechaValidada))
+            {
+                Console.WriteLine("ERROR! El valor ingresado tiene que ser de tipo fecha, intente nuevamente.");
+            }
+            else if (fechaValidada > DateTime.Now)
+            {
+                Console.WriteLine("ERROR! La fecha ingresada no puede ser superior al día de hoy, intente nuevamente.");
+            }
+            else
+            {
+                flag = true;
+            }
+
+            return flag;
+        }
+
+        public static bool FuncionValidacionFechaFin(string fecha, ref DateTime fechaValidada)
+        {
+            //Declaración de variables
+            bool flag = false;
+
+            if (!DateTime.TryParse(fecha, out fechaValidada))
+            {
+                Console.WriteLine("ERROR! El valor ingresado tiene que ser de tipo fecha, intente nuevamente.");
+            }
+            else
+            {
+                flag = true;
+            }
 
             return flag;
         }

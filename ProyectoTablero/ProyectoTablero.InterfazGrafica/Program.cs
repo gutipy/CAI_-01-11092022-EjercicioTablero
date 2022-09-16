@@ -55,12 +55,12 @@ namespace ProyectoTablero.InterfazGrafica
                             Cambiar(tableroElectronico);
                             break;
                         case "3":
-                            //Elimino un contacto de la agenda
-                            //Eliminar(agendaElectronica);
+                            //Agrego una tarea al tablero
+                            Agregar(tableroElectronico);
                             break;
                         case "4":
                             //Salir del programa
-                            //Salir();
+                            Salir();
                             break;
                     }
                 }
@@ -80,7 +80,7 @@ namespace ProyectoTablero.InterfazGrafica
                 "Bienvenido al tablero! Seleccione una opción:" + Environment.NewLine +
                 "1 - Listar tareas del tablero por estado" + Environment.NewLine +
                 "2 - Cambiar el estado a una tarea" + Environment.NewLine +
-                "3 - Eliminar contacto" + Environment.NewLine +
+                "3 - Agregar una tarea al tablero" + Environment.NewLine +
                 "4 - Salir"
                 )
                 ;
@@ -120,6 +120,75 @@ namespace ProyectoTablero.InterfazGrafica
 
             //Llamo al método 'CambiarEstado' de la clase 'Tablero' para que busque el código y haga el cambio correspondiente
             t.CambiarEstado(_codigoValidado, _estado);
+        }
+
+        //Método para agregar una nueva tarea al tablero
+        public static void Agregar(Tablero tableroElectronico)
+        {
+            //Declaración de variables
+            string _descripcion;
+            string _orden;
+            int _ordenValidado = 0;
+            string _fechaAlta;
+            DateTime _fechaAltaValidada = DateTime.Now;
+            string _fechaFin;
+            DateTime _fechaFinValidada = DateTime.Now;
+            bool flag;
+
+            //Pido al usuario que ingrese los datos de la tarea y a la vez valido cada input ingresado
+            do
+            {
+                Console.WriteLine("Ingrese la descripción de la nueva tarea");
+                _descripcion = Console.ReadLine();
+                flag = ValidacionesInput.FuncionValidacionCadena(ref _descripcion);
+
+            }while (flag == false);
+
+            do
+            {
+                Console.WriteLine("Ingrese el número de orden de la nueva tarea");
+                _orden = Console.ReadLine();
+                flag = ValidacionesInput.FuncionValidacionNumero(_orden, ref _ordenValidado);
+
+            } while (flag == false);
+
+            do
+            {
+                Console.WriteLine("Ingrese la fecha de alta de la nueva tarea");
+                _fechaAlta = Console.ReadLine();
+                flag = ValidacionesInput.FuncionValidacionFechaAlta(_fechaAlta, ref _fechaAltaValidada);
+
+            } while (flag == false);
+
+            do
+            {
+                Console.WriteLine("Ingrese la fecha de finalización de la nueva tarea");
+                _fechaFin = Console.ReadLine();
+                flag = ValidacionesInput.FuncionValidacionFechaFin(_fechaFin, ref _fechaFinValidada);
+
+            } while (flag == false);
+
+            //Instancio la clase Tarea y la agrego al Tablero
+            Tarea t = new Tarea(
+                _descripcion,
+                _ordenValidado,
+                _fechaAltaValidada,
+                _fechaFinValidada
+                );
+
+            tableroElectronico.AgregarTarea(t);
+
+            Console.WriteLine("La tarea fue agregada exitosamente al tablero, presione Enter para elegir otra opción.");
+            Console.ReadKey();
+            Console.Clear();
+        }
+
+        public static void Salir()
+        {
+            Console.WriteLine("Usted ha salido del tablero, presione Enter");
+            Console.ReadKey();
+
+            Environment.Exit(0);
         }
     }
 }

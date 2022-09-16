@@ -45,6 +45,7 @@
     <Compile Include="Entidades\Tarea.cs" />
     <Compile Include="Exceptions\CodigoTareaNoExisteException.cs" />
     <Compile Include="Exceptions\EstadoTareaInvalidoException.cs" />
+    <Compile Include="Exceptions\FechaAltaMayorAFechaFinException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones\ValidacionesInput.cs" />
   </ItemGroup>

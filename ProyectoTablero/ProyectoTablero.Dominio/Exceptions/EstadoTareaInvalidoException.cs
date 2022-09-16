@@ -8,6 +8,6 @@ namespace ProyectoTablero.Dominio.Exceptions
 {
     public class EstadoTareaInvalidoException : Exception
     {
-        public EstadoTareaInvalidoException(string estado) : base("ERROR! El estado de tarea " + estado + " no corresponde a un estado existente, por favor intente nuevamente.") { }
+        public EstadoTareaInvalidoException(string estado) : base("ERROR! El estado de tarea " + estado + " no corresponde a una tarea con ese estado existente en este momento, por favor intente nuevamente.") { }
     }
 }
