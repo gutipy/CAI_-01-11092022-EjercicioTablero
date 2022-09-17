@@ -132,11 +132,11 @@ namespace ProyectoTablero.Dominio
         }
 
         //Función para buscar y traer la tarea más antigua del tablero
-        public void TraerTareaMasAntigua()
+        public Tarea TraerTareaMasAntigua()
         {
             //Declaración de variables
             DateTime _fechaAltaTareaMasAntigua = DateTime.Now;
-            int _codigoTarea = 0;
+            Tarea resultado = null;
             
 
             foreach (Tarea t in _tareas)
@@ -144,11 +144,11 @@ namespace ProyectoTablero.Dominio
                 if(t.FechaAlta < _fechaAltaTareaMasAntigua)
                 {
                     _fechaAltaTareaMasAntigua = t.FechaAlta;
-                    _codigoTarea = t.Codigo;
+                    resultado = t;
                 }
             }
 
-            Console.WriteLine("La tarea más antigua es la que tiene código: " + _codigoTarea + " y fecha de alta " + _fechaAltaTareaMasAntigua);
+            return resultado;
         }
     }
 }
